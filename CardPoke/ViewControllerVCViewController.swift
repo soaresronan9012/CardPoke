@@ -7,7 +7,13 @@
 
 import UIKit
 
-class ViewControllerVCViewController: UIViewController {
+class ViewControllerVCViewController: UIViewController, buttonEnter { // assinou o protocolo
+    
+    func buttonEnterPressed() { // metodo do protocolo
+        let secondVC = Card01VC()
+            navigationController?.pushViewController(secondVC, animated: true)
+    }
+    
 
     var viewscreen : ViewScreen?
     
@@ -19,6 +25,7 @@ class ViewControllerVCViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewscreen?.delegate = self // habilita a chamada do protocol
 
         
     }
