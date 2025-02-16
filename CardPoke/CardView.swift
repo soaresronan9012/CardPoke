@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol CardViewDelegate: AnyObject {  // protocolo padrao para classes filhas
+    func didTapNextButton()
+}
+
 class CardView: UIView { // declaração de classe
 
-        
+        weak var delegate: CardViewDelegate? // var do tipo delegate
+    
         private let titleLabel: UILabel = {  // componente de titulo
             let label = UILabel()
             label.textColor = .white
@@ -51,11 +56,12 @@ class CardView: UIView { // declaração de classe
         private var buttonAction: (() -> Void)?  //Função opcional que será chamada quando o botão for pressionado.
     
         // 🔹 Inicializador permitindo customização
-        init(title: String, frontImageName: String, backImageName: String, buttonTitle: String, buttonAction: @escaping () -> Void) {
+        init(title: String,titleColor: UIColor ,frontImageName: String, backImageName: String, buttonTitle: String, buttonAction: @escaping () -> Void) {
             super.init(frame: .zero)
             backgroundColor = .black
             
             titleLabel.text = title
+            titleLabel.textColor = titleColor // cor do texto
             frontImage = UIImage(named: frontImageName)
             backImage = UIImage(named: backImageName)
             imageView.image = frontImage
@@ -115,7 +121,7 @@ class CardView: UIView { // declaração de classe
         }
         
         @objc private func buttonTapped() {
-            buttonAction?()
+            delegate?.didTapNextButton() // ao clicar no botao invoca esse metodo
         }
     
 

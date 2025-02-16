@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol testDelegate: AnyObject {
+    func testDelegateMethod()
+}
+
 class Card01Screen: UIView {
     
+    weak var delegate: testDelegate?
         
     lazy var labelTitle : UILabel = {
         let lb = UILabel()
@@ -66,6 +71,7 @@ class Card01Screen: UIView {
         }()
         @objc func tappetButtonNext( _ sender: UIButton){ // método invocado pela acao do botao, padrao
             print(#function)
+            delegate?.testDelegateMethod()
             }
     
     

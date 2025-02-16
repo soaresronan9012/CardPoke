@@ -7,7 +7,13 @@
 
 import UIKit
 
-class Card02VC: UIViewController {
+class Card02VC: UIViewController, CardViewDelegate {  // herda o protocol
+    
+    func didTapNextButton() {  // metodo do protocol
+        //let card3 = Card03VC()
+           // navigationController?.pushViewController(card3, animated: true)
+        }
+    
 
     var screen : Card02Screen?
     
@@ -18,6 +24,7 @@ class Card02VC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        screen?.delegate = self // atribui a variavel do tipo do protocol a esta view
 
         // Do any additional setup after loading the view.
     }

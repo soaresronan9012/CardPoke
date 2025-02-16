@@ -7,7 +7,13 @@
 
 import UIKit
 
-class Card01VC: UIViewController {
+class Card01VC: UIViewController, testDelegate {
+    
+    func testDelegateMethod() {
+        let vc = Card02VC()
+        navigationController?.pushViewController(vc, animated: true)
+        }
+    
 
     var screen: Card01Screen!  // var do tipo da view alvo
     
@@ -18,6 +24,7 @@ class Card01VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        screen?.delegate = self
 
         // Do any additional setup after loading the view.
     }

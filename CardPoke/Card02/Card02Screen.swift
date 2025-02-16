@@ -7,13 +7,16 @@
 
 import UIKit
 
+
 class Card02Screen: CardView {
 
+   
     init() {
             super.init(
                 title: "Charmander",
-                frontImageName: "001",
-                backImageName: "card_back",
+                titleColor: .red.withAlphaComponent(0.6),
+                frontImageName: "004",
+                backImageName: "Screenshot 2025-02-15 at 21.26.10",
                 buttonTitle: "Next"
             ) {
                 print("Botão Next pressionado!")
