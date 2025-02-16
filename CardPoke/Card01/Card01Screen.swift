@@ -44,7 +44,7 @@ class Card01Screen: UIView {
        }
 
        @objc private func flipImage() { // metodo invocado apos o toque no elemento
-           let newImage = isFlipped ? UIImage(named: "001") : UIImage(named: "Screenshot 2025-02-14 at 22.15.31")
+           let newImage = isFlipped ? UIImage(named: "001") : UIImage(named: "Screenshot 2025-02-16 at 14.49.50")
 
            // metodo nativo para acao de flip da imagem
            UIView.transition(with: imageCard, duration: 0.5, options: .transitionFlipFromRight, animations: {

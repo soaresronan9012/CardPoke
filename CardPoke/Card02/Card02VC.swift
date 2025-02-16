@@ -10,8 +10,8 @@ import UIKit
 class Card02VC: UIViewController, CardViewDelegate {  // herda o protocol
     
     func didTapNextButton() {  // metodo do protocol
-        //let card3 = Card03VC()
-           // navigationController?.pushViewController(card3, animated: true)
+        let card3 = Card03VC()
+           navigationController?.pushViewController(card3, animated: true)
         }
     
 
