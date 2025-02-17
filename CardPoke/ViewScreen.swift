@@ -84,7 +84,7 @@ class ViewScreen: UIView {
             labelTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
             labelTitle.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            buttonSelectButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -125),
+            buttonSelectButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -50),
             buttonSelectButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             buttonSelectButton.widthAnchor.constraint(equalToConstant: 100),
             buttonSelectButton.heightAnchor.constraint(equalToConstant: 32),        ])

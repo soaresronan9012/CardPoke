@@ -102,12 +102,12 @@ class Card01Screen: UIView {
             labelTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
             labelTitle.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            imageCard.topAnchor.constraint(equalTo: labelTitle.bottomAnchor, constant: 120),
+            imageCard.topAnchor.constraint(equalTo: labelTitle.bottomAnchor, constant: 70),
             imageCard.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageCard.widthAnchor.constraint(equalToConstant: 300),
             imageCard.heightAnchor.constraint(equalToConstant: 370),
             
-            buttonNext.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -125),
+            buttonNext.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -50),
             buttonNext.centerXAnchor.constraint(equalTo: centerXAnchor),
             buttonNext.widthAnchor.constraint(equalToConstant: 100),
             buttonNext.heightAnchor.constraint(equalToConstant: 32),

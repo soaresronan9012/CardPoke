@@ -90,12 +90,13 @@ class CardView: UIView { // declaração de classe
                 titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
                 titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
                 
-                imageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 120),
+                imageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 85),
                 imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
                 imageView.widthAnchor.constraint(equalToConstant: 300),
                 imageView.heightAnchor.constraint(equalToConstant: 370),
                 
-                actionButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -125),
+                actionButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -50),
+                //actionButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant:20),
                 actionButton.centerXAnchor.constraint(equalTo: centerXAnchor),
                 actionButton.widthAnchor.constraint(equalToConstant: 100),
                 actionButton.heightAnchor.constraint(equalToConstant: 32)
