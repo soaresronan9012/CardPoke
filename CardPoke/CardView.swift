@@ -33,6 +33,18 @@ class CardView: UIView { // declaração de classe
             imageView.isUserInteractionEnabled = true // Habilita toque na imagem, tem metodo especifico
             return imageView
         }()
+    
+    private let logoPokeBall: UIImageView = {
+            let imageView = UIImageView()
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.image = UIImage(named: "pokeball-pokemon-svgrepo-com")
+            imageView.contentMode = .scaleAspectFit
+            imageView.clipsToBounds = true
+            imageView.layer.cornerRadius = 20
+            imageView.isUserInteractionEnabled = true // Habilita toque na imagem, tem metodo especifico
+            return imageView
+    }()
+    
         
         private let actionButton: UIButton = {  // componente de botao
             let button = UIButton()
@@ -82,6 +94,7 @@ class CardView: UIView { // declaração de classe
             addSubview(titleLabel)
             addSubview(imageView)
             addSubview(actionButton)
+            addSubview(logoPokeBall)
             
             //Associa um método para ser chamado quando o botão for pressionado.
             actionButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
@@ -94,6 +107,12 @@ class CardView: UIView { // declaração de classe
                 imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
                 imageView.widthAnchor.constraint(equalToConstant: 300),
                 imageView.heightAnchor.constraint(equalToConstant: 370),
+                
+                logoPokeBall.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
+                //logoPokeBall.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+                logoPokeBall.centerXAnchor.constraint(equalTo: centerXAnchor),
+                logoPokeBall.widthAnchor.constraint(equalToConstant: 40),
+                logoPokeBall.heightAnchor.constraint(equalToConstant: 40),
                 
                 actionButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -50),
                 //actionButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant:20),

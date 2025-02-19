@@ -53,7 +53,17 @@ class Card01Screen: UIView {
 
            isFlipped.toggle() // Inverte o estado
             }
-   
+    
+    private let logoPokeBall: UIImageView = {
+            let imageView = UIImageView()
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.image = UIImage(named: "pokeball-pokemon-svgrepo-com")
+            imageView.contentMode = .scaleAspectFit
+            imageView.clipsToBounds = true
+            imageView.layer.cornerRadius = 20
+            imageView.isUserInteractionEnabled = true // Habilita toque na imagem, tem metodo especifico
+            return imageView
+    }()
     
     lazy var buttonNext : UIButton = {
             let bt = UIButton() // (type: .system) , ja tem um padrao estabelecido do sistema
@@ -94,6 +104,7 @@ class Card01Screen: UIView {
         addSubview(labelTitle)
         addSubview(imageCard)
         addSubview(buttonNext)
+        addSubview(logoPokeBall)
     }
     
     
@@ -112,6 +123,12 @@ class Card01Screen: UIView {
             imageCard.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageCard.widthAnchor.constraint(equalToConstant: 300),
             imageCard.heightAnchor.constraint(equalToConstant: 370),
+            
+            logoPokeBall.topAnchor.constraint(equalTo: imageCard.bottomAnchor, constant: 12),
+            //logoPokeBall.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            logoPokeBall.centerXAnchor.constraint(equalTo: centerXAnchor),
+            logoPokeBall.widthAnchor.constraint(equalToConstant: 40),
+            logoPokeBall.heightAnchor.constraint(equalToConstant: 40),
             
             buttonNext.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -50),
             buttonNext.centerXAnchor.constraint(equalTo: centerXAnchor),
