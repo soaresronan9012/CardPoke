@@ -96,6 +96,12 @@ class Card01Screen: UIView {
         addSubview(buttonNext)
     }
     
+    
+    func resetImageToFront() {  // método que faz a imagem voltar a face inicial
+        if (isFlipped == true){
+            flipImage() }
+    }
+
     func addConstraints(){
         NSLayoutConstraint.activate([
             

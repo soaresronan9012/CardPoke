@@ -75,7 +75,7 @@ class ViewScreen: UIView {
     
     func configConstraints(){
         NSLayoutConstraint.activate( [
-            
+            // de acordo com as dimensoes de tela do dispositivo
             backgroundimage.topAnchor.constraint(equalTo: topAnchor),
             backgroundimage.leadingAnchor.constraint(equalTo: leadingAnchor),
             backgroundimage.trailingAnchor.constraint(equalTo: trailingAnchor),

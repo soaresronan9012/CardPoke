@@ -30,7 +30,7 @@ class CardView: UIView { // declaração de classe
             imageView.contentMode = .scaleAspectFit
             imageView.clipsToBounds = true
             imageView.layer.cornerRadius = 20
-            imageView.isUserInteractionEnabled = true // Habilita toque na imagem
+            imageView.isUserInteractionEnabled = true // Habilita toque na imagem, tem metodo especifico
             return imageView
         }()
         
@@ -57,7 +57,7 @@ class CardView: UIView { // declaração de classe
     
         // 🔹 Inicializador permitindo customização
         init(title: String,titleColor: UIColor ,frontImageName: String, backImageName: String, buttonTitle: String, buttonAction: @escaping () -> Void) {
-            super.init(frame: .zero)
+            super.init(frame: .zero) //Passar .zero significa que a view será criada sem um tamanho fixo inicial, e o layout será ajustado depois.
             backgroundColor = .black
             
             titleLabel.text = title
@@ -112,7 +112,7 @@ class CardView: UIView { // declaração de classe
 
         //Adiciona o gesto à `imageView`.
         @objc private func flipImage() {
-            let newImage = isFlipped ? frontImage : backImage
+            let newImage = isFlipped ? frontImage : backImage // valida qual imagem apresentar conforme a face esta
 
             UIView.transition(with: imageView, duration: 0.5, options: .transitionFlipFromRight, animations: {
                 self.imageView.image = newImage
@@ -125,5 +125,10 @@ class CardView: UIView { // declaração de classe
             delegate?.didTapNextButton() // ao clicar no botao invoca esse metodo
         }
     
+        
+        func resetImageToFront() {  // método que faz a imagem voltar a face inicial
+            if (isFlipped == true){
+                flipImage() }
+        }
 
 }

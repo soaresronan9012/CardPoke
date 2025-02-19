@@ -28,6 +28,8 @@ class Card03VC: UIViewController, CardViewDelegate {
     }
     
 
-    
-
+    override func viewWillAppear(_ animated: Bool) {  // viewWillAppear é chamado toda vez que a tela aparece novamente,
+        super.viewWillAppear(animated)
+        screen?.resetImageToFront() // 🔹 Método para resetar a imagem
+    }
 }
