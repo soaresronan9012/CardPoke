@@ -41,7 +41,7 @@ class CardView: UIView { // declaração de classe
             imageView.contentMode = .scaleAspectFit
             imageView.clipsToBounds = true
             imageView.layer.cornerRadius = 20
-            imageView.isUserInteractionEnabled = true // Habilita toque na imagem, tem metodo especifico
+            //imageView.isUserInteractionEnabled = true // Habilita toque na imagem, tem metodo especifico
             return imageView
     }()
     

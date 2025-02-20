@@ -38,11 +38,11 @@ class Card01Screen: UIView {
     
     private var isFlipped = false // Controle do estado da imagem
     
-    private func addTapGesture() { // metodo que aceita toque na imagem ou outro elemento
-           let tapGesture = UITapGestureRecognizer(target: self, action: #selector(flipImage))
+    
+    private func addTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(flipImage))
         imageCard.addGestureRecognizer(tapGesture)
-       }
-
+    }
        @objc private func flipImage() { // metodo invocado apos o toque no elemento
            let newImage = isFlipped ? UIImage(named: "001") : UIImage(named: "Screenshot 2025-02-16 at 14.49.50")
 
@@ -61,7 +61,7 @@ class Card01Screen: UIView {
             imageView.contentMode = .scaleAspectFit
             imageView.clipsToBounds = true
             imageView.layer.cornerRadius = 20
-            imageView.isUserInteractionEnabled = true // Habilita toque na imagem, tem metodo especifico
+            //imageView.isUserInteractionEnabled = true // Habilita toque na imagem, tem metodo especifico
             return imageView
     }()
     
