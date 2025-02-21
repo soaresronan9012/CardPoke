@@ -8,6 +8,11 @@
 import UIKit
 
 class Card01VC: UIViewController, testDelegate {
+    func logoPokeSettings() {
+        let vc = SettingsCard01()
+        present(vc, animated: true)
+    }
+    
     
     func testDelegateMethod() {
         let vc = Card02VC()

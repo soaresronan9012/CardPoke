@@ -9,7 +9,8 @@ import UIKit
 
 class Card04VC: UIViewController, CardViewDelegate {
     func gotoSettings() {
-    
+        let vc = SettingsCard04()
+        present(vc, animated: true)
     }
     
   

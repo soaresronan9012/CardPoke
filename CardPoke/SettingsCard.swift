@@ -18,8 +18,8 @@ class SettingsCard: UIView {
     private let BGimageView: UIImageView = {  // background imagem
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "pokeBG")
+        imageView.contentMode = .scaleToFill
+        imageView.image = UIImage(named: "Pokémon ✖️")
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 20
         return imageView
@@ -77,8 +77,8 @@ class SettingsCard: UIView {
 
             cardImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 90),
             cardImage.centerXAnchor.constraint(equalTo: centerXAnchor),
-            cardImage.widthAnchor.constraint(equalToConstant: 350),
-            cardImage.heightAnchor.constraint(equalToConstant: 505),
+            cardImage.widthAnchor.constraint(equalToConstant: 355),
+            cardImage.heightAnchor.constraint(equalToConstant: 545),
             
             
         ])

@@ -9,6 +9,7 @@ import UIKit
 
 protocol testDelegate: AnyObject {
     func testDelegateMethod()
+    func logoPokeSettings()
 }
 
 class Card01Screen: UIView {
@@ -61,9 +62,18 @@ class Card01Screen: UIView {
             imageView.contentMode = .scaleAspectFit
             imageView.clipsToBounds = true
             imageView.layer.cornerRadius = 20
-            //imageView.isUserInteractionEnabled = true // Habilita toque na imagem, tem metodo especifico
+            imageView.isUserInteractionEnabled = true // Habilita toque na imagem, tem metodo especifico
             return imageView
     }()
+    
+    private func addTapGesturePoke() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(poketapped))
+        logoPokeBall.addGestureRecognizer(tapGesture)
+    }
+       @objc private func poketapped() {
+           delegate?.logoPokeSettings()
+        }
+    
     
     lazy var buttonNext : UIButton = {
             let bt = UIButton() // (type: .system) , ja tem um padrao estabelecido do sistema
@@ -90,6 +100,7 @@ class Card01Screen: UIView {
         super.init(frame: frame)
         backgroundColor = .black
         addTapGesture()
+        addTapGesturePoke()
         addElements()
         addConstraints()
         

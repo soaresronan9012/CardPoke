@@ -9,8 +9,8 @@ import UIKit
 
 class Card03VC: UIViewController, CardViewDelegate {
     func gotoSettings() {
-    
-    }
+        let vc = SettingsCard03()
+        present(vc, animated: true)    }
     
    
     func didTapNextButton() {
