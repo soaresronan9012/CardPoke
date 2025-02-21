@@ -8,6 +8,11 @@
 import UIKit
 
 class Card03VC: UIViewController, CardViewDelegate {
+    func gotoSettings() {
+    
+    }
+    
+   
     func didTapNextButton() {
         let card4 = Card04VC()
            navigationController?.pushViewController(card4, animated: true)    }

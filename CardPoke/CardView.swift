@@ -9,6 +9,7 @@ import UIKit
 
 protocol CardViewDelegate: AnyObject {  // protocolo padrao para classes filhas
     func didTapNextButton()
+    func gotoSettings()
 }
 
 class CardView: UIView { // declaração de classe
@@ -41,9 +42,19 @@ class CardView: UIView { // declaração de classe
             imageView.contentMode = .scaleAspectFit
             imageView.clipsToBounds = true
             imageView.layer.cornerRadius = 20
-            //imageView.isUserInteractionEnabled = true // Habilita toque na imagem, tem metodo especifico
+            imageView.isUserInteractionEnabled = true // Habilita toque na imagem, tem metodo especifico
             return imageView
     }()
+    // funcao que habilita click na imagem algo
+    private func setupGesturePoke() {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(pokeballTapped))
+        logoPokeBall.addGestureRecognizer(tapGesture)
+        }
+    
+        @objc private func pokeballTapped() { // acao ao ser clicado a imagem
+            delegate?.gotoSettings()
+        }
+    
     
         
         private let actionButton: UIButton = {  // componente de botao
@@ -82,6 +93,7 @@ class CardView: UIView { // declaração de classe
             
             setupView()
             addTapGesture()
+            setupGesturePoke()
         }
         
     

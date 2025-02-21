@@ -7,7 +7,13 @@
 
 import UIKit
 
-class Card02VC: UIViewController, CardViewDelegate {  // herda o protocol
+class Card02VC: UIViewController, CardViewDelegate {
+    func gotoSettings() {
+        let vc = SettingsCard02()
+        present(vc, animated: true)
+    }
+    
+    
     
     func didTapNextButton() {  // metodo do protocol
         let card3 = Card03VC()

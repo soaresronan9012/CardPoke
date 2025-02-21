@@ -8,6 +8,11 @@
 import UIKit
 
 class Card04VC: UIViewController, CardViewDelegate {
+    func gotoSettings() {
+    
+    }
+    
+  
     func didTapNextButton() {
     
     }
