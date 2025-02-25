@@ -1,30 +1,27 @@
 //
-//  Card05VC.swift
+//  Card06VC.swift
 //  CardPoke
 //
-//  Created by Ronan Soares on 22/02/25.
+//  Created by Ronan Soares on 24/02/25.
 //
 
 import UIKit
 
-class Card05VC: UIViewController, CardViewDelegate {
-
+class Card06VC: UIViewController, CardViewDelegate {
+    func didTapNextButton() {
+    
+    }
+    
     func gotoSettings() {
-        let vc = SettingsCard05()
+        let vc = SettingsCard06VC()
         present(vc, animated: true)
     }
     
-  
-    func didTapNextButton() {
-        let card6 = Card06VC()
-          navigationController?.pushViewController(card6, animated: true)
-    }
-    
 
-    var screen: Card05Screen?
+    var screen: Card06Screen?
     
     override func loadView() {
-        screen = Card05Screen()
+        screen = Card06Screen()
         view = screen
     }
     
