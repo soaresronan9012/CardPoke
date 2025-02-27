@@ -10,7 +10,7 @@ import UIKit
 class ViewControllerVCViewController: UIViewController, buttonEnter { // assinou o protocolo
     
     func buttonEnterPressed() { // metodo do protocolo
-        let secondVC = Card01VC()
+        let secondVC = LoginVC()
             navigationController?.pushViewController(secondVC, animated: true)
     }
     
