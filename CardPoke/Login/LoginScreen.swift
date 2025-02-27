@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol LoginButtonprotocol: AnyObject {
+    func loginButtonTapped()
+}
+
 class LoginScreen: UIView {
+    
+    weak var delegate: LoginButtonprotocol?
 
     lazy var backgroundImage: UIImageView = {
         let bg = UIImageView(image: UIImage(named: "Pokémon"))
@@ -72,22 +78,24 @@ class LoginScreen: UIView {
             button.isEnabled = false
             button.setTitle("Login", for: .normal)
             button.setTitleColor(.black, for: .normal)
-            button.backgroundColor = .systemGray5
+            //button.backgroundColor = .systemGray5
+            button.backgroundColor = .black.withAlphaComponent(0.5);
             button.layer.cornerRadius = 10
-            button.layer.borderWidth = 1
+            //button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.systemGray.cgColor
             button.addTarget(self, action: #selector(buttonTappet), for: .touchUpInside)
             return button
         }()
         @objc func buttonTappet( _ sender: UIButton){
             print("clicou")
-              // var do tipo do protocol / metodo protocol
+            delegate?.loginButtonTapped()
         }
         
     override init(frame: CGRect) {
         super.init(frame: frame)
         addelements()
         setupConstraints()
+        setupDismissKeyboardGesture()
     }
     
     required init?(coder: NSCoder) {
@@ -105,6 +113,64 @@ class LoginScreen: UIView {
         addSubview(loginButton)
     }
     
+    public func configDelegateTextField(delegate: UITextFieldDelegate){  // func assinatura do protocol
+        nameTextField.delegate = delegate   // elementos a serem validados dentro desse protocol
+        passwordTextField.delegate = delegate
+        }
+        
+    
+        // metodo com a validacao dos campos alvos, e tomadas de ações
+         private func validaTextField (){
+            let email: String = nameTextField.text ?? " "   //pode receber ou nao valores, possui valor default
+            let password: String = passwordTextField.text ?? " "
+                       
+            if !email.isEmpty && !password.isEmpty {   // se estiverem preenchidos faça
+                loginButton.isEnabled = true
+                loginButton.backgroundColor = .systemGray
+                loginButton.layer.borderColor = UIColor.black.cgColor}
+             else {
+                 loginButton.isEnabled = false
+                 
+                 loginButton.backgroundColor = .black.withAlphaComponent(0.5);
+                 loginButton.layer.borderColor = UIColor.systemGray.cgColor
+                 
+                    // gerador de advertencia visual, caso algum campo fique vazio TEXTFIELD
+                    if email.isEmpty {
+                        nameTextField.layer.borderColor = UIColor.red.cgColor
+                        nameTextField.layer.borderWidth = 1
+                        }
+                    if password.isEmpty{
+                        passwordTextField.layer.borderColor = UIColor.red.cgColor
+                        passwordTextField.layer.borderWidth = 1
+                        }
+                }
+        }
+    
+    
+        func callValidaTextField(){ // metodo public invoca método private
+            validaTextField()
+        }
+    
+    
+    // funcao que baixa o teclado ao tocar na tela
+       private func setupDismissKeyboardGesture() {
+               let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+               tapGesture.cancelsTouchesInView = false // Permite que outros gestos ainda sejam processados
+           self.addGestureRecognizer(tapGesture)
+           }
+       @objc private func dismissKeyboard() {
+           self.endEditing(true) // Fecha o teclado
+           
+           if nameTextField.text?.isEmpty ?? true{
+               nameTextField.layer.borderColor = UIColor.red.cgColor
+               nameTextField.layer.borderWidth = 1
+               }
+           if passwordTextField.text?.isEmpty ?? true {
+               passwordTextField.layer.borderColor = UIColor.red.cgColor
+               passwordTextField.layer.borderWidth = 1
+               }
+          }
+       
     private func setupConstraints(){
         NSLayoutConstraint.activate([
             
@@ -115,14 +181,17 @@ class LoginScreen: UIView {
             
             nameTextField.topAnchor.constraint(equalTo:safeAreaLayoutGuide.topAnchor, constant: 100),
             nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35),
+            nameTextField.widthAnchor.constraint(equalToConstant: 340),
             
             lineNameView.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 10),
             lineNameView.widthAnchor.constraint(equalToConstant: 340),
             lineNameView.heightAnchor.constraint(equalToConstant: 1),
             lineNameView.centerXAnchor.constraint(equalTo: centerXAnchor),
             
+            
             passwordTextField.topAnchor.constraint(equalTo: lineNameView.bottomAnchor, constant: 50),
             passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35),
+            passwordTextField.widthAnchor.constraint(equalToConstant: 340),
             
             linePasswordView.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10),
             linePasswordView.widthAnchor.constraint(equalToConstant: 340),
