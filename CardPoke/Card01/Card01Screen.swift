@@ -81,7 +81,7 @@ class Card01Screen: UIView {
             bt.setTitle("Next", for: .normal) // texto do botao
             bt.titleLabel?.font = UIFont.systemFont(ofSize: 18)// tamanho da fonte
             bt.setTitleColor(.black, for: .normal) // cor e estilo
-            bt.backgroundColor = UIColor.systemGray5 // cor com transparencia, mesma cor da view
+            bt.backgroundColor = .systemGray // cor com transparencia, mesma cor da view
             bt.layer.cornerRadius = 10 // angulo das bordas
             bt.clipsToBounds = true // habilita bordas arredondadas
             bt.layer.borderWidth = 1.0// largura borda

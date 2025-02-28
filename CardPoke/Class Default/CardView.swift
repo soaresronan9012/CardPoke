@@ -62,7 +62,7 @@ class CardView: UIView { // declaração de classe
             button.translatesAutoresizingMaskIntoConstraints = false
             button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
             button.setTitleColor(.black, for: .normal)
-            button.backgroundColor = UIColor.systemGray5
+            button.backgroundColor = .systemGray
             button.layer.cornerRadius = 10
             button.clipsToBounds = true
             button.layer.borderWidth = 1.0

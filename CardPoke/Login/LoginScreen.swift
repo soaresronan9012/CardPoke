@@ -24,9 +24,10 @@ class LoginScreen: UIView {
     
     lazy var nameTextField: UITextField = {
         let tf = UITextField()
-        tf.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        tf.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
         tf.textColor = .white
         tf.backgroundColor = .clear
+        tf.keyboardType = .emailAddress
         tf.layer.borderWidth = 0
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
@@ -41,10 +42,12 @@ class LoginScreen: UIView {
     
     lazy var passwordTextField: UITextField = {
         let tf = UITextField()
-        tf.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        tf.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
         tf.textColor = .white
         tf.backgroundColor = .clear
         tf.backgroundColor = .clear
+        tf.keyboardType = .numberPad
+        tf.isSecureTextEntry = true
         tf.layer.borderWidth = 0
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
@@ -61,7 +64,7 @@ class LoginScreen: UIView {
             let button = UIButton()
             button.translatesAutoresizingMaskIntoConstraints = false
             button.setTitle("recover / create account", for: .normal)
-            button.setTitleColor(.systemGray6, for: .normal)
+            button.setTitleColor(.systemGray2, for: .normal)
             button.backgroundColor = .clear  //remove visual do botao
             button.layer.borderWidth = 0     // remove bordas
             button.addTarget(self, action: #selector(recoverButtonTappet), for: .touchUpInside)
