@@ -53,6 +53,15 @@ class LoginScreen: UIView {
         return tf
     }()
     
+    lazy var imageVisibleKey: UIImageView = {
+            let image = UIImageView()
+            image.translatesAutoresizingMaskIntoConstraints = false
+            image.image = UIImage(named: "password-svgrepo-com-2")
+            image.isUserInteractionEnabled = true // habilita interacao com a imagem
+            return image
+        }()
+    
+    
     lazy var linePasswordView : UIView = { // line
             let line = UIView()
             line.translatesAutoresizingMaskIntoConstraints = false
@@ -93,12 +102,34 @@ class LoginScreen: UIView {
             print("clicou")
             delegate?.loginButtonTapped()
         }
+    
+    
+    private func addGestureRecognizers() {
+               let touchDownGesture = UILongPressGestureRecognizer(target: self, action: #selector(showPassword))
+            touchDownGesture.minimumPressDuration = 0.1
+                imageVisibleKey.addGestureRecognizer(touchDownGesture) // associado o gesto á esse elemento
+                let touchUpGesture = UITapGestureRecognizer(target: self, action: #selector(hidePassword))
+                imageVisibleKey.addGestureRecognizer(touchUpGesture)
+           }
+    @objc private func showPassword(_ sender: UILongPressGestureRecognizer) {
+            if sender.state == .began {
+                passwordTextField.isSecureTextEntry = false
+                imageVisibleKey.image = UIImage(named: "password-minimalistic-svgrepo-com-2") // troca a imagem
+            }
         
+            }
+        @objc private func hidePassword(_ sender: UITapGestureRecognizer) {
+            passwordTextField.isSecureTextEntry = true
+            imageVisibleKey.image = UIImage(named: "password-svgrepo-com-2") // troca a imagem
+        }
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addelements()
         setupConstraints()
         setupDismissKeyboardGesture()
+        addGestureRecognizers() // imagem de exibir campo senha
     }
     
     required init?(coder: NSCoder) {
@@ -111,6 +142,7 @@ class LoginScreen: UIView {
         addSubview(nameTextField)
         addSubview(lineNameView)
         addSubview(passwordTextField)
+        addSubview(imageVisibleKey)
         addSubview(linePasswordView)
         addSubview(recoverButton)
         addSubview(loginButton)
@@ -196,7 +228,12 @@ class LoginScreen: UIView {
             passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35),
             passwordTextField.widthAnchor.constraint(equalToConstant: 340),
             
-            linePasswordView.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10),
+            imageVisibleKey.topAnchor.constraint(equalTo: passwordTextField.topAnchor),
+            imageVisibleKey.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -45),
+            imageVisibleKey.widthAnchor.constraint(equalToConstant: 35),
+            imageVisibleKey.heightAnchor.constraint(equalToConstant: 30),
+                       
+            linePasswordView.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 13),
             linePasswordView.widthAnchor.constraint(equalToConstant: 340),
             linePasswordView.heightAnchor.constraint(equalToConstant: 1),
             linePasswordView.centerXAnchor.constraint(equalTo: centerXAnchor),
