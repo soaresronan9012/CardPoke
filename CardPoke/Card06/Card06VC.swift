@@ -9,8 +9,9 @@ import UIKit
 
 class Card06VC: UIViewController, CardViewDelegate {
     func didTapNextButton() {
-    
-    }
+        let lastCard = LastCardVC()
+        navigationController?.pushViewController(lastCard, animated: true)
+    }    
     
     func gotoSettings() {
         let vc = SettingsCard06VC()

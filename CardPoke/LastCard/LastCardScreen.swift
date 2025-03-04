@@ -7,14 +7,22 @@
 
 import UIKit
 
-class LastCardScreen: UIView {
+class LastCardScreen: CardView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    init() {
+        super.init(
+            title: "Scorbunny",
+            titleColor: .white.withAlphaComponent(0.7),
+            frontImageName: "813",
+            backImageName: "Screenshot 2025-03-03 at 20.58.36",
+            buttonTitle: "Next"
+        ) {
+            print("Botão Next pressionado!")
+        }
     }
-    */
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
 }
