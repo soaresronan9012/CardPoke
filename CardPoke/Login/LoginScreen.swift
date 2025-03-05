@@ -9,6 +9,7 @@ import UIKit
 
 protocol LoginButtonprotocol: AnyObject {
     func loginButtonTapped()
+    func recoverButtonTapped()
 }
 
 class LoginScreen: UIView {
@@ -81,6 +82,7 @@ class LoginScreen: UIView {
         }()
         @objc func recoverButtonTappet(){ // acao do botao ao ser clicado
             print("clicou recuperar senha ")
+            delegate?.recoverButtonTapped()
             }
     
     

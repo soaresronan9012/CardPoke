@@ -9,6 +9,12 @@ import UIKit
 
 class LoginVC: UIViewController, LoginButtonprotocol, UITextFieldDelegate {
     
+    func recoverButtonTapped() {
+        let recover = RecoverVC()
+        present(recover, animated: true)
+    }
+    
+    
     func loginButtonTapped() {
         let card01 = Card01VC()
             navigationController?.pushViewController(card01, animated: true)
