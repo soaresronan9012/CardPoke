@@ -18,7 +18,7 @@ class RecoverScreen: UIView {
     
     lazy var recoverTextField: UITextField = {
         let tf = UITextField()
-        tf.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
+        tf.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray3])
         tf.textColor = .white
         tf.backgroundColor = .clear
         tf.keyboardType = .emailAddress
@@ -30,7 +30,7 @@ class RecoverScreen: UIView {
     lazy var linerecoverView : UIView = { // line
             let line = UIView()
             line.translatesAutoresizingMaskIntoConstraints = false
-            line.backgroundColor = .systemGray
+            line.backgroundColor = .systemGray3
             return line
             }()
     
@@ -41,7 +41,7 @@ class RecoverScreen: UIView {
             //button.isEnabled = false
             button.setTitle("Send", for: .normal)
             button.setTitleColor(.black, for: .normal)
-            button.backgroundColor = .systemGray
+            button.backgroundColor = .systemGray3
             //button.backgroundColor = .black.withAlphaComponent(0.5);
             button.layer.cornerRadius = 10
             //button.layer.borderWidth = 1
