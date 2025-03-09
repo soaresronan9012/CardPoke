@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol sendButtonProtocol : AnyObject {
+    func sendButtonTapped()
+}
+
 class RecoverScreen: UIView {
+    
+    weak var delegate : sendButtonProtocol?
     
     lazy var BackGround:UIImageView = {
         let bg = UIImageView(image: UIImage(named: "HD Wallpaper 74"))
@@ -51,6 +57,7 @@ class RecoverScreen: UIView {
         }()
         @objc func buttonTappet( _ sender: UIButton){
             print("clicou")
+            delegate?.sendButtonTapped()
             
         }
     

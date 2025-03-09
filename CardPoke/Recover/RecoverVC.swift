@@ -7,7 +7,12 @@
 
 import UIKit
 
-class RecoverVC: UIViewController {
+class RecoverVC: UIViewController, sendButtonProtocol {
+    
+    func sendButtonTapped() {
+        let Es = EmailSendVC()
+        present(Es, animated: true)    }
+    
 
     var screen : RecoverScreen?
     
@@ -20,6 +25,7 @@ class RecoverVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        screen?.delegate = self
 
         // Do any additional setup after loading the view.
     }
