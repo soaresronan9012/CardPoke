@@ -61,10 +61,27 @@ class RecoverScreen: UIView {
             
         }
     
+    
+    // funcao que baixa o teclado ao tocar na tela
+       private func setupDismissKeyboardGesture() {
+               let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+               tapGesture.cancelsTouchesInView = false // Permite que outros gestos ainda sejam processados
+           self.addGestureRecognizer(tapGesture)
+           }
+    @objc private func dismissKeyboard() {
+        self.endEditing(true) // Fecha o teclado
+        
+        if  recoverTextField.text?.isEmpty ?? true{
+            recoverTextField.layer.borderColor = UIColor.yellow.cgColor
+            recoverTextField.layer.borderWidth = 1
+          }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addElements()
         addConstraints()
+        setupDismissKeyboardGesture() // ao clicar na tela
     }
     
     required init?(coder: NSCoder) {
