@@ -33,6 +33,25 @@ class RecoverScreen: UIView {
         return tf
     }()
     
+    public func DelegateTextField(delegate: UITextFieldDelegate){  // func assinatura do protocol
+        recoverTextField.delegate = delegate   // elementos a serem validados dentro desse protocol
+          
+      }
+    
+    public func validaTextField (){ // metodo de validacao
+        let email: String = recoverTextField.text ?? " "  // se o conteudo do text desse campo for nil
+        
+        if !email.isEmpty  {
+            sendButton.isEnabled = true
+        }
+        else {
+            sendButton.isEnabled = false
+            recoverTextField.layer.borderColor = UIColor.yellow.cgColor
+            recoverTextField.layer.borderWidth = 1
+        }
+    }
+        
+        
     lazy var linerecoverView : UIView = { // line
             let line = UIView()
             line.translatesAutoresizingMaskIntoConstraints = false
@@ -44,7 +63,7 @@ class RecoverScreen: UIView {
     lazy var sendButton : UIButton = {
             let button = UIButton()
             button.translatesAutoresizingMaskIntoConstraints = false
-            //button.isEnabled = false
+            button.isEnabled = false
             button.setTitle("Send", for: .normal)
             button.setTitleColor(.black, for: .normal)
             button.backgroundColor = .systemGray3
