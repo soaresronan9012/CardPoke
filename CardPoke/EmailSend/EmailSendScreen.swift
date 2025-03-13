@@ -11,8 +11,8 @@ class EmailSendScreen: UIView {
     
     lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "email Sent!!!!"
-        label.font = .systemFont(ofSize: 28, weight: .bold)
+        label.text = "email Send!!!!"
+        label.font = .systemFont(ofSize: 32, weight: .bold)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
