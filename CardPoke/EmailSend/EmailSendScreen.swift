@@ -17,6 +17,14 @@ class EmailSendScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    lazy var icon: UIImageView = {
+        let icon = UIImageView()
+        icon.image = UIImage( named: "send-mail-svgrepo-com")
+        icon.contentMode = .scaleAspectFit
+        icon.translatesAutoresizingMaskIntoConstraints = false
+        return icon
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,6 +41,7 @@ class EmailSendScreen: UIView {
     
     func addSubviews() {
         addSubview(label)
+        addSubview(icon)
         
     }
     
@@ -42,6 +51,11 @@ class EmailSendScreen: UIView {
             //label.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 180),
             label.centerXAnchor.constraint(equalTo: centerXAnchor),
             label.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            icon.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 40),
+            icon.centerXAnchor.constraint(equalTo: centerXAnchor),
+            icon.widthAnchor.constraint(equalToConstant: 100),
+            icon.heightAnchor.constraint(equalToConstant: 100),
             
             ])
     }
