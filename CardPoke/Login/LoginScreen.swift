@@ -173,11 +173,11 @@ class LoginScreen: UIView {
                  
                     // gerador de advertencia visual, caso algum campo fique vazio TEXTFIELD
                     if email.isEmpty {
-                        nameTextField.layer.borderColor = UIColor.red.cgColor
+                        nameTextField.layer.borderColor = UIColor.yellow.cgColor
                         nameTextField.layer.borderWidth = 1
                         }
                     if password.isEmpty{
-                        passwordTextField.layer.borderColor = UIColor.red.cgColor
+                        passwordTextField.layer.borderColor = UIColor.yellow.cgColor
                         passwordTextField.layer.borderWidth = 1
                         }
                 }
@@ -199,11 +199,11 @@ class LoginScreen: UIView {
            self.endEditing(true) // Fecha o teclado
            
            if nameTextField.text?.isEmpty ?? true{
-               nameTextField.layer.borderColor = UIColor.red.cgColor
+               nameTextField.layer.borderColor = UIColor.yellow.cgColor
                nameTextField.layer.borderWidth = 1
                }
            if passwordTextField.text?.isEmpty ?? true {
-               passwordTextField.layer.borderColor = UIColor.red.cgColor
+               passwordTextField.layer.borderColor = UIColor.yellow.cgColor
                passwordTextField.layer.borderWidth = 1
                }
           }
