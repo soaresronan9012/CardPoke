@@ -85,6 +85,17 @@ class LoginScreen: UIView {
             delegate?.recoverButtonTapped()
             }
     
+    lazy var withLabel : UILabel = {
+        let wl = UILabel()
+        wl.translatesAutoresizingMaskIntoConstraints = false
+        wl.textColor = .systemGray2
+        wl.textAlignment = .center
+        wl.font = UIFont.systemFont(ofSize: 18)
+        wl.text = "Enter with:"
+        return wl
+        
+    }()
+    
     
     lazy var loginButton : UIButton = {
             let button = UIButton()
@@ -147,6 +158,7 @@ class LoginScreen: UIView {
         addSubview(imageVisibleKey)
         addSubview(linePasswordView)
         addSubview(recoverButton)
+        addSubview(withLabel)
         addSubview(loginButton)
     }
     
@@ -242,6 +254,9 @@ class LoginScreen: UIView {
             
             recoverButton.topAnchor.constraint(equalTo: linePasswordView.topAnchor, constant: 10),
             recoverButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -45),
+            
+            withLabel.topAnchor.constraint(equalTo: recoverButton.bottomAnchor, constant: 88),
+            withLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
                         
                         
             loginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -140),
