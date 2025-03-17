@@ -96,6 +96,31 @@ class LoginScreen: UIView {
         
     }()
     
+    lazy var logoView : UIView = {
+            let logo = UIView()
+            logo.translatesAutoresizingMaskIntoConstraints = false
+            logo.backgroundColor = .clear
+            return logo
+        }()
+        
+        lazy var appleLogo : UIImageView = {
+            let image = UIImageView()
+            image.translatesAutoresizingMaskIntoConstraints = false
+            image.image = UIImage(named: "apple-svgrepo-com-3")
+            image.isUserInteractionEnabled = true
+            image.alpha = 0.7
+            return image
+        }()
+    
+        lazy var googleLogo : UIImageView = {
+            let image = UIImageView()
+            image.translatesAutoresizingMaskIntoConstraints = false
+            image.image = UIImage(named: "icons8-google-logo")
+            image.isUserInteractionEnabled = true
+            image.alpha = 0.7
+            return image
+        }()
+    
     
     lazy var loginButton : UIButton = {
             let button = UIButton()
@@ -159,7 +184,11 @@ class LoginScreen: UIView {
         addSubview(linePasswordView)
         addSubview(recoverButton)
         addSubview(withLabel)
+        addSubview(logoView)
+        addSubview(appleLogo)
+        addSubview(googleLogo)
         addSubview(loginButton)
+        
     }
     
     public func configDelegateTextField(delegate: UITextFieldDelegate){  // func assinatura do protocol
@@ -255,9 +284,25 @@ class LoginScreen: UIView {
             recoverButton.topAnchor.constraint(equalTo: linePasswordView.topAnchor, constant: 10),
             recoverButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -45),
             
-            withLabel.topAnchor.constraint(equalTo: recoverButton.bottomAnchor, constant: 88),
+            withLabel.topAnchor.constraint(equalTo: recoverButton.bottomAnchor, constant: 92),
             withLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-                        
+            
+            logoView.topAnchor.constraint(equalTo: withLabel.bottomAnchor, constant:10),
+                       //logoView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+                       //logoView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            logoView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            logoView.heightAnchor.constraint(equalToConstant: 80),
+            logoView.widthAnchor.constraint(equalToConstant: 170),
+                       
+            appleLogo.topAnchor.constraint(equalTo: logoView.topAnchor, constant: 10),
+            appleLogo.leadingAnchor.constraint(equalTo: logoView.leadingAnchor, constant: 40),
+            appleLogo.widthAnchor.constraint(equalToConstant: 38),
+            appleLogo.heightAnchor.constraint(equalToConstant: 38),
+                       
+            googleLogo.topAnchor.constraint(equalTo: logoView.topAnchor, constant: 11),
+            googleLogo.leadingAnchor.constraint(equalTo: appleLogo.trailingAnchor, constant: 18),
+            googleLogo.widthAnchor.constraint(equalToConstant: 40),
+            googleLogo.heightAnchor.constraint(equalToConstant: 40),
                         
             loginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -140),
             loginButton.centerXAnchor.constraint(equalTo: centerXAnchor),
