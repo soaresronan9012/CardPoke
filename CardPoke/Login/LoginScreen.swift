@@ -109,8 +109,17 @@ class LoginScreen: UIView {
             image.image = UIImage(named: "apple-svgrepo-com-3")
             image.isUserInteractionEnabled = true
             image.alpha = 0.7
+            image.isUserInteractionEnabled = true // habilita interacao de toques
             return image
         }()
+        private func setupGestureRecognizerAppleLogo() {  // padrao do sistema, para click em elementos
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AppleLogoTapped))
+            appleLogo.addGestureRecognizer(tapGesture) // nome do elemento invocando
+                    }
+            @objc private func AppleLogoTapped() { // acao invocada ao ser clicada
+                print("imagem apple clicada!")
+                 }
+    
     
         lazy var googleLogo : UIImageView = {
             let image = UIImageView()
@@ -118,9 +127,17 @@ class LoginScreen: UIView {
             image.image = UIImage(named: "icons8-google-logo")
             image.isUserInteractionEnabled = true
             image.alpha = 0.7
+            image.isUserInteractionEnabled = true // habilita interacao de toques
             return image
         }()
-    
+        private func setupGestureRecognizerGoogleLogo() {  // padrao do sistema, para click em elementos
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(googleLogoTapped))
+            googleLogo.addGestureRecognizer(tapGesture) // nome do elemento invocando
+                    }
+            @objc private func googleLogoTapped() { // acao invocada ao ser clicada
+                print("imagem google clicada!")
+                            }
+        
     
     lazy var loginButton : UIButton = {
             let button = UIButton()
@@ -168,6 +185,8 @@ class LoginScreen: UIView {
         setupConstraints()
         setupDismissKeyboardGesture()
         addGestureRecognizers() // imagem de exibir campo senha
+        setupGestureRecognizerAppleLogo() // AppleLogo
+        setupGestureRecognizerGoogleLogo() // GoogleLogo
     }
     
     required init?(coder: NSCoder) {
