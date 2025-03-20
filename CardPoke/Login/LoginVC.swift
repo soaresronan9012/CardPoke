@@ -8,6 +8,10 @@
 import UIKit
 
 class LoginVC: UIViewController, LoginButtonprotocol, UITextFieldDelegate {
+    func createAccountButtonTapped() {
+        let create = CreateVC()
+        present(create, animated: true)    }
+    
     
     func recoverButtonTapped() {
         let recover = RecoverVC()
