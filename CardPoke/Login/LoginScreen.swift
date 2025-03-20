@@ -73,7 +73,7 @@ class LoginScreen: UIView {
     lazy var recoverButton : UIButton = {  // botao onde aparece somente o seu texto
             let button = UIButton()
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.setTitle("recover / create account", for: .normal)
+            button.setTitle("recover account", for: .normal)
             button.setTitleColor(.systemGray2, for: .normal)
             button.backgroundColor = .clear  //remove visual do botao
             button.layer.borderWidth = 0     // remove bordas
@@ -137,6 +137,19 @@ class LoginScreen: UIView {
             @objc private func googleLogoTapped() { // acao invocada ao ser clicada
                 print("imagem google clicada!")
                             }
+    
+    lazy var registerButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("sing up here", for: .normal)
+        button.setTitleColor(.systemGray2, for: .normal)
+        button.backgroundColor = .clear
+        button.addTarget(self, action: #selector(registerTapped), for: .touchUpInside)
+        return button
+        }()
+    @objc func registerTapped() {
+        print("register tapped!")
+    }
         
     
     lazy var loginButton : UIButton = {
@@ -206,6 +219,7 @@ class LoginScreen: UIView {
         addSubview(logoView)
         addSubview(appleLogo)
         addSubview(googleLogo)
+        addSubview(registerButton)
         addSubview(loginButton)
         
     }
@@ -322,6 +336,10 @@ class LoginScreen: UIView {
             googleLogo.leadingAnchor.constraint(equalTo: appleLogo.trailingAnchor, constant: 18),
             googleLogo.widthAnchor.constraint(equalToConstant: 40),
             googleLogo.heightAnchor.constraint(equalToConstant: 40),
+            
+            registerButton.topAnchor.constraint(equalTo: googleLogo.bottomAnchor, constant: 75),
+            registerButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
                         
             loginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -140),
             loginButton.centerXAnchor.constraint(equalTo: centerXAnchor),
