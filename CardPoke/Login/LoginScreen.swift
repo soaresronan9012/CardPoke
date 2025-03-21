@@ -159,7 +159,7 @@ class LoginScreen: UIView {
             button.translatesAutoresizingMaskIntoConstraints = false
             button.isEnabled = false
             button.setTitle("Login", for: .normal)
-            button.setTitleColor(.black, for: .normal)
+            button.setTitleColor(.clear, for: .normal)
             button.backgroundColor = .clear
             //button.backgroundColor = .black.withAlphaComponent(0.5);
             button.layer.cornerRadius = 10
@@ -240,11 +240,13 @@ class LoginScreen: UIView {
             if !email.isEmpty && !password.isEmpty {   // se estiverem preenchidos faça
                 loginButton.isEnabled = true
                 loginButton.backgroundColor = .systemGray
+                loginButton.setTitleColor(.black, for: .normal);
                 loginButton.layer.borderColor = UIColor.black.cgColor}
              else {
                  loginButton.isEnabled = false
                  
                  loginButton.backgroundColor = .clear;
+                 loginButton.setTitleColor(.clear, for: .normal) // placeholder transparente
                  loginButton.layer.borderColor = UIColor.systemGray.cgColor
                  
                     // gerador de advertencia visual, caso algum campo fique vazio TEXTFIELD
@@ -343,7 +345,7 @@ class LoginScreen: UIView {
             registerButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             
                         
-            loginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -140),
+            loginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -50),
             loginButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             loginButton.widthAnchor.constraint(equalToConstant: 100),
             loginButton.heightAnchor.constraint(equalToConstant: 32),
