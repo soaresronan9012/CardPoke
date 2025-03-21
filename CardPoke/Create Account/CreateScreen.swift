@@ -17,7 +17,7 @@ class CreateScreen: UIView {
     
     lazy var nameTextFieldCreate: UITextField = {
         let tf = UITextField()
-        tf.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
+        tf.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray2])
         tf.textColor = .white
         tf.backgroundColor = .clear
         tf.keyboardType = .emailAddress

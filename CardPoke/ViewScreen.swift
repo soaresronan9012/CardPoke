@@ -8,7 +8,7 @@
 import UIKit
 
 
-protocol buttonEnter: AnyObject {
+protocol buttonEnter: AnyObject { // protocolo para invocar tela login
     func buttonEnterPressed()
 }
 

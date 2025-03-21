@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol LoginButtonprotocol: AnyObject {
+protocol LoginButtonprotocol: AnyObject { // protocolo para invocar telas
     func loginButtonTapped()
     func recoverButtonTapped()
     func createAccountButtonTapped()
@@ -160,8 +160,8 @@ class LoginScreen: UIView {
             button.isEnabled = false
             button.setTitle("Login", for: .normal)
             button.setTitleColor(.black, for: .normal)
-            //button.backgroundColor = .systemGray5
-            button.backgroundColor = .black.withAlphaComponent(0.5);
+            button.backgroundColor = .clear
+            //button.backgroundColor = .black.withAlphaComponent(0.5);
             button.layer.cornerRadius = 10
             //button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.systemGray.cgColor
@@ -244,7 +244,7 @@ class LoginScreen: UIView {
              else {
                  loginButton.isEnabled = false
                  
-                 loginButton.backgroundColor = .black.withAlphaComponent(0.5);
+                 loginButton.backgroundColor = .clear;
                  loginButton.layer.borderColor = UIColor.systemGray.cgColor
                  
                     // gerador de advertencia visual, caso algum campo fique vazio TEXTFIELD
