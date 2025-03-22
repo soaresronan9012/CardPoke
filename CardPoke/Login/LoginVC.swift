@@ -37,7 +37,7 @@ class LoginVC: UIViewController, LoginButtonprotocol, UITextFieldDelegate {
         super.viewDidLoad()
         screen?.delegate = self
         screen?.configDelegateTextField(delegate: self)
-
+        overrideUserInterfaceStyle = .light
         // Do any additional setup after loading the view.
     }
     

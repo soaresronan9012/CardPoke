@@ -31,7 +31,7 @@ class Card05VC: UIViewController, CardViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         screen?.delegate = self
-
+        overrideUserInterfaceStyle = .light
         // Do any additional setup after loading the view.
     }
     

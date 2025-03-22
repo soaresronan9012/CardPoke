@@ -26,6 +26,7 @@ class ViewControllerVCViewController: UIViewController, buttonEnter { // assinou
     override func viewDidLoad() {
         super.viewDidLoad()
         viewscreen?.delegate = self // habilita a chamada do protocol
+        overrideUserInterfaceStyle = .light
 
         
     }

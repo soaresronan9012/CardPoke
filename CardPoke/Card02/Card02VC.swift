@@ -31,7 +31,7 @@ class Card02VC: UIViewController, CardViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         screen?.delegate = self // atribui a variavel do tipo do protocol a esta view
-
+        overrideUserInterfaceStyle = .light
         // Do any additional setup after loading the view.
     }
     

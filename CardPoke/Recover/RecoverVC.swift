@@ -27,7 +27,7 @@ class RecoverVC: UIViewController, sendButtonProtocol, UITextFieldDelegate {
         super.viewDidLoad()
         screen?.delegate = self
         screen?.DelegateTextField(delegate: self)
-
+        overrideUserInterfaceStyle = .light
         // Do any additional setup after loading the view.
     }
     
