@@ -19,7 +19,7 @@ class ViewScreen: UIView {
     lazy var backgroundimage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "Pokémon ✖️")  // Define uma imagem
+        image.image = UIImage(named: "Pokémon01 ")  // Define uma imagem
         //image.contentMode = .scaleAspectFit  // Define o modo de escala da imagem
         return image
     }()
