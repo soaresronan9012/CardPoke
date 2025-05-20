@@ -12,7 +12,7 @@ class Card06Screen: CardView {
     init() {
         super.init(
             title: "Pikachu",
-            titleColor: .yellow.withAlphaComponent(0.7),
+            titleColor: .white.withAlphaComponent(0.6),
             frontImageName: "025",
             backImageName: "Screenshot 2025-02-24 at 21.34.55",
             buttonTitle: "Next"

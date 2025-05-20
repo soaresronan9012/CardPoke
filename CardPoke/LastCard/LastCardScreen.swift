@@ -12,7 +12,7 @@ class LastCardScreen: CardView {
     init() {
         super.init(
             title: "Scorbunny",
-            titleColor: .white.withAlphaComponent(0.7),
+            titleColor: .white.withAlphaComponent(0.6),
             frontImageName: "813",
             backImageName: "Screenshot 2025-03-03 at 20.58.36",
             buttonTitle: "Next"

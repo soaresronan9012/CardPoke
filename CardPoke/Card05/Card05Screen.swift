@@ -12,7 +12,7 @@ class Card05Screen: CardView {
     init() {
         super.init(
             title: "Eevee",
-            titleColor: .brown.withAlphaComponent(0.7),
+            titleColor: .white.withAlphaComponent(0.6),
             frontImageName: "133",
             backImageName: "Screenshot 2025-02-22 at 10.15.49",
             buttonTitle: "Next"

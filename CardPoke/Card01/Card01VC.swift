@@ -37,7 +37,7 @@ class Card01VC: UIViewController, testDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {  // viewWillAppear é chamado toda vez que a tela aparece novamente,
         super.viewDidDisappear(animated)
-        screen?.resetImageToFront() // 🔹 Método para resetar a imagem
+        screen?.resetImageToFront() //  Método para resetar a imagem
     }
 
 }

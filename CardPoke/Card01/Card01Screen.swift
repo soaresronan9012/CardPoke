@@ -18,7 +18,7 @@ class Card01Screen: UIView {
         
     lazy var labelTitle : UILabel = {
         let lb = UILabel()
-        lb.textColor = .green.withAlphaComponent(0.6)
+        lb.textColor = .white.withAlphaComponent(0.6)
         lb.textAlignment = .center
         lb.text = "Bulbasaur"
         lb.font = UIFont.systemFont(ofSize: 28, weight: .bold)

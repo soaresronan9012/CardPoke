@@ -12,7 +12,7 @@ class Card04Screen: CardView {
     init() {
         super.init(
             title: "Cartepie",
-            titleColor: .green.withAlphaComponent(0.7),
+            titleColor: .white.withAlphaComponent(0.6),
             frontImageName: "010",
             backImageName: "Screenshot 2025-02-16 at 15.00.10",
             buttonTitle: "Next"
