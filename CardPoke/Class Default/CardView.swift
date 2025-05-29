@@ -127,7 +127,7 @@ class CardView: UIView { // declaração de classe
                 logoPokeBall.heightAnchor.constraint(equalToConstant: 40),
                 //logoPokeBall.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -30),
                 
-                actionButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -40),
+                actionButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -40),
                 //actionButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant:20),
                 actionButton.centerXAnchor.constraint(equalTo: centerXAnchor),
                 actionButton.widthAnchor.constraint(equalToConstant: 100),
